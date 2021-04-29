@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace cms_portal.Controllers
+namespace try_create.Controllers
 {
     [ApiController]
     [Route("[controller]")]

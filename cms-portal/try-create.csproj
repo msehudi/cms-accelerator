@@ -10,7 +10,7 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
-    <RootNamespace>cms_portal</RootNamespace>
+    <RootNamespace>try_create</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
