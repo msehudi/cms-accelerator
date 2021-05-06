@@ -1,6 +1,6 @@
 using System;
 
-namespace try_create
+namespace cms_portal
 {
     public class WeatherForecast
     {
