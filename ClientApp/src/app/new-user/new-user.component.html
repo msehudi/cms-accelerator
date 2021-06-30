@@ -1,0 +1,27 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Create new user/profile</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-contact></app-contact>
+      <div class="row" style="margin-top: 32px;">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Password" type="password" formControlName="password">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Retype Password" type="password2" formControlName="password">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
