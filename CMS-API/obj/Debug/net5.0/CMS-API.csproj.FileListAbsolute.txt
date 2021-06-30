@@ -1,7 +1,0 @@
-D:\code\cms-accelerator\CMS-API\obj\Debug\net5.0\CMS-API.csproj.AssemblyReference.cache
-D:\code\cms-accelerator\CMS-API\obj\Debug\net5.0\CMS-API.GeneratedMSBuildEditorConfig.editorconfig
-D:\code\cms-accelerator\CMS-API\obj\Debug\net5.0\CMS-API.AssemblyInfoInputs.cache
-D:\code\cms-accelerator\CMS-API\obj\Debug\net5.0\CMS-API.AssemblyInfo.cs
-D:\code\cms-accelerator\CMS-API\obj\Debug\net5.0\CMS-API.csproj.CoreCompileInputs.cache
-D:\code\cms-accelerator\CMS-API\obj\Debug\net5.0\CMS-API.MvcApplicationPartsAssemblyInfo.cs
-D:\code\cms-accelerator\CMS-API\obj\Debug\net5.0\CMS-API.MvcApplicationPartsAssemblyInfo.cache
