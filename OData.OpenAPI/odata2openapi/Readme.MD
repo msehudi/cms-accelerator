@@ -11,7 +11,7 @@ csharp:
   use-datetimeoffset: true 
   sync-methods: all 
   generate-empty-classes: true
-  namespace: Gov.Lclb.Cllb.Interfaces
+  namespace: CRM.Interface
   azure-arm: false
   static-initializer: true
 ```
