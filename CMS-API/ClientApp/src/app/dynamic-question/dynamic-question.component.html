@@ -1,0 +1,13 @@
+<ng-container *ngIf="module">
+    <section *ngFor="let item of (module.webPages); let i = index;">
+        <app-dynamic-form *ngIf="selectedPage === i"
+        (onBackClick)="onBackClick()"
+        (onNextClick)="onNextClick()"
+        (onSaveClick)="onSaveClick()"
+        (onSubmitClick)="onSubmitClick()"
+        [form]="forms[i]" [questionTypes]="questionTypes" [webPage]="item"> 
+        </app-dynamic-form>
+    </section>
+</ng-container>
+
+{{formValues | json}}

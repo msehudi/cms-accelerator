@@ -15,16 +15,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.6" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.6" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="5.2.8" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.2.2" />
     <PackageReference Include="Microsoft.OpenApi.OData" Version="1.0.4" />
     <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.2.2" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.21" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure" Version="3.3.19" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\Dynamics-Autorest\DynamicsAutorest.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ModuleData } from '../models/app-modules';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,6 @@ export class ApplicationService {
   }
 
   public getApplicationTypes() {
-    return this.httpCLient.get<any[]>('api/applications/application-types');
+    return this.httpCLient.get<ModuleData>('api/applications/application-types');
   }
 }

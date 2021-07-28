@@ -28,6 +28,12 @@ import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplicationComponent } from './application/application.component';
 import { ApplicationService } from './services/application.service';
+import { DynamicQuestionComponent } from './dynamic-question/dynamic-question.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +43,9 @@ import { ApplicationService } from './services/application.service';
     NewUserComponent,
     MyProfileComponent,
     ApplicationListComponent,
-    ApplicationComponent
+    ApplicationComponent,
+    DynamicQuestionComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +56,8 @@ import { ApplicationService } from './services/application.service';
     MatToolbarModule,
     MatInputModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
@@ -58,11 +68,12 @@ import { ApplicationService } from './services/application.service';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    FlexLayoutModule
   ],
   exports: [
     HttpClientModule,
   ],
-  providers: [UserService, ApplicationService],
+  providers: [UserService, ApplicationService, MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

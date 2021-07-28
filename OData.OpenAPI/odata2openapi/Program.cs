@@ -160,9 +160,6 @@ namespace odata2openapi
             // True if we use the Autorest Odata extension
             bool enableOdataExtension = false;
 
-            // True if we get metadata from Dynamics
-            bool getMetadata = true;
-
             // True if we use strings instead of guids primary keys.
             bool useStringForGuid = true;
 

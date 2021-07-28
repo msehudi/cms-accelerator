@@ -1,10 +1,14 @@
-<p>application works!</p>
-
-<mat-form-field appearance="fill">
+<section *ngIf="!currentModule">
+  <mat-form-field appearance="fill">
     <mat-label>Programs</mat-label>
-    <mat-select >
+    <mat-select (valueChange)="currentModule = $event">
       <mat-option *ngFor="let item of applicationTypes" [value]="item.id">
         {{item.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
+</section>
+
+<section *ngIf="currentModule">
+  <app-dynamic-question [questionTypes]="questionTypes" [module]="getModule(currentModule)"></app-dynamic-question>
+</section>

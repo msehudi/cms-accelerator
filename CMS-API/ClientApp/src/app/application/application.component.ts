@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Module, QuestionType } from '../models/app-modules';
 import { ApplicationService } from '../services/application.service';
 
 @Component({
@@ -8,8 +9,10 @@ import { ApplicationService } from '../services/application.service';
   styleUrls: ['./application.component.scss']
 })
 export class ApplicationComponent implements OnInit {
-  applicationTypes: any[] = []; 
-
+  applicationTypes: Module[] = []; 
+  appId?: string;
+  currentModule?: string;
+  questionTypes: QuestionType[] = [];
   constructor(
     private route: ActivatedRoute,
     private applicationService: ApplicationService,
@@ -19,12 +22,18 @@ export class ApplicationComponent implements OnInit {
       if(id === 'new'){
         id = null;
       }
+      this.appId = id;
     });
 
     this.applicationService.getApplicationTypes()
     .subscribe(data => {
-      this.applicationTypes = data;
+      this.applicationTypes = data.modules; 
+      this.questionTypes = data.questionTypes;
     })
+  }
+
+  getModule(id: string){
+    return this.applicationTypes.find(module => module.id === id);
   }
 
   ngOnInit(): void {

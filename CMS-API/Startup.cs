@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using CMS_API.Authentication;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using System;
+using CRM.Interface;
 
 namespace CMS_API
 {
@@ -35,6 +36,8 @@ namespace CMS_API
 
             // Identity Services
             services.AddScoped<IUserStore<ApplicationUser>, UserStore>();
+            
+            services.AddHttpClient<IDynamicsClient, DynamicsClient>();
 
             var serviceUri = new Uri("https://requestresponseaccel.api.crm3.dynamics.com/api/data/v9.2/");
             string clientId = "ec4c0a7f-27e7-4cf4-bbc1-ce28695d5906";

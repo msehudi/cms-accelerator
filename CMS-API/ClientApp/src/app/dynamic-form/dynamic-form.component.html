@@ -1,0 +1,48 @@
+<mat-card *ngIf="form && webPage" [formGroup]="form">
+    <h1 class=".mat-title">{{webPage?.header}}</h1>
+
+    <section *ngFor="let item of (webPage?.questions || [])">
+        <!-- {{item.controlType}} -->
+        <ng-container *ngIf="item.id">
+            <mat-form-field  style="width: 100%;" *ngIf="item.controlType === 'textbox'" appearance="outline">
+                <mat-label>{{item.label}} </mat-label>
+                <input [formControlName]="item.id" matInput [type]="item.type || 'text'">
+            </mat-form-field>
+            <mat-form-field style="width: 100%;"  *ngIf="item.controlType === 'textarea'" appearance="outline">
+                <mat-label>{{item.label}} </mat-label>
+                <textarea rows="5" [formControlName]="item.id" matInput></textarea>
+            </mat-form-field>
+            <mat-form-field *ngIf="item.controlType === 'datepicker'" appearance="outline">
+                <mat-label>{{item.label}} </mat-label>
+                <input matInput [matDatepicker]="dp3" disabled> 
+                <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+            </mat-form-field>
+            <!-- <mat-form-field *ngIf="item.controlType === 'dropdown'" appearance="outline">
+                <mat-label>{{item.label}} </mat-label>
+                <select [formControlName]="item.id">
+                    <option value=""></option>
+                    <option *ngFor="let option of getOptions(item.questionTypeId)" [value]="option.value">
+                        {{option.label}}
+                    </option>
+                </select>
+            </mat-form-field> -->
+            <section class="radio-group" *ngIf="item.controlType === 'radio-group'">
+                <label>{{item.label}}</label> <br>
+                <mat-radio-group [formControlName]="item.id">
+                    <mat-radio-button class="radio-button"
+                        *ngFor="let option of getOptions(item.questionTypeId)" [value]="option.value">
+                        {{option.label}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </ng-container>
+    </section>
+
+    <div class="footer">{{webPage?.footer}}</div>
+
+    <button *ngIf="webPage?.showBackButton" class="action-button" (click)="onBackClick.emit(true)" mat-raised-button>Back</button>
+    <button *ngIf="webPage?.showNextButton" class="action-button" (click)="onNextClick.emit(true)" mat-raised-button>Next</button>
+    <!-- <button *ngIf="webPage?.showSaveButton" class="action-button" (click)="onSaveClick.emit(true)" mat-raised-button>Save</button> -->
+    <button *ngIf="webPage?.showSubmitButton" class="action-button" (click)="onSubmitClick.emit(true)" mat-raised-button>Submit</button>
+</mat-card>

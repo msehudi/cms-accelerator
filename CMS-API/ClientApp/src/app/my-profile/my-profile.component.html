@@ -1,12 +1,12 @@
-<div class="grid-container">
-  <h1 class="mat-h1">My Profile</h1>
-  <div class="row">
-    <section class="col">
-      <h3>User Info</h3>
+<div class="my-profile">
+  <h1 class="mat-display-1" style="margin: 32px 0;">My Profile</h1>
+  <div fxLayout="row" fxLayout.md="column" fxLayoutGap="32px">
+    <section fxFlex="50%">
+      <h2 class="mat-headline">User Info</h2>
       <app-contact [disabled]="true" [user]="user"></app-contact>
     </section>
-    <section class="col">
-      <h3>Applications</h3>
+    <section fxFlex="50%">
+      <h2>Applications</h2>
 
         <app-application-list></app-application-list>
 
